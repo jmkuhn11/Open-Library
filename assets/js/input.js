@@ -6,18 +6,13 @@ function handleSearchFormSubmit(event) {
   var authorInputVal = document.querySelector('#author-input').value;
   var subjectInputVal = document.querySelector('#subject-input').value;
  
-  console.log(authorInputVal);
-  if (!authorInputVal & !subjectInputVal) {
-    console.error('You need to give us an author or a subject!');
-    return;
-  }
+  var searchPage = './search.html?q=' + authorInputVal + '&format=' + subjectInputVal;
 
-  var queryString = './search-results.html?q=' + searchInputVal + '&format=' + formatInputVal;
-
-  location.assign(queryString);
+  location.assign(searchPage);
 }
 
 searchFormEl.addEventListener('submit', handleSearchFormSubmit);
 
-
-//https://openlibrary.org/search/authors.json
+//https://openlibrary.org/search/authors.json?q=suzanne-collins
+//https://openlibrary.org/authors/OL1394359A/works.json
+//https://openlibrary.org/subjects/love.json
