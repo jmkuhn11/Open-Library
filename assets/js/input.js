@@ -6,7 +6,7 @@ function handleSearchFormSubmit(event) {
   var authorInputVal = document.querySelector('#author-input').value;
   var subjectInputVal = document.querySelector('#subject-input').value;
  
-  var searchPage = './search.html?q=' + authorInputVal + '&format=' + subjectInputVal;
+  var searchPage = './search.html?author=' + authorInputVal + '&subject=' + subjectInputVal;
 
   location.assign(searchPage);
 }
