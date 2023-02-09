@@ -24,7 +24,7 @@ function getFromUrl() {
   }
   
 function displayBooks(author, subject, startIndex) {
-
+    console.log(startIndex);
     var finalUrl = 'https://openlibrary.org/search.json?';
   
     var endUrl;
@@ -50,7 +50,7 @@ function displayBooks(author, subject, startIndex) {
         return response.json();
       })
       .then(function (searchResults) {
-
+        console.log(searchResults);
         var firstBook = startIndex + 1;
         var lastBook = startIndex + 10;
         if (lastBook > searchResults.numFound) {
@@ -60,7 +60,7 @@ function displayBooks(author, subject, startIndex) {
         document.getElementById("searchCount").textContent = "Search results found: " + searchResults.numFound + "  (Showing " + firstBook + " to " + lastBook + ")";
 
         var html = create10Books(searchResults, startIndex);
-
+        console.log(html);
         bookPage.innerHTML = html;
 
         if (startIndex == 0) {
@@ -75,7 +75,7 @@ function displayBooks(author, subject, startIndex) {
             next.disabled = false;
         }
   
-        console.log(localPage);
+        //console.log(localPage);
   
         if (!localPage.results.length) {
           console.log('No results found!');
@@ -101,7 +101,7 @@ function displayBooks(author, subject, startIndex) {
 
   function create10Books(searchResults, start) {
     var html = "<table class='booksTable'>";
-
+    console.log(start);
     for (let i = start; i < start + 10; i++) {
 
         if (i < searchResults.docs.length) {
@@ -129,14 +129,23 @@ function displayBooks(author, subject, startIndex) {
     html += "    <tr><td><label>Author: </label>" + doc.author_name + "</td></tr>";
     html += "    <tr><td><label>Year Released: </label>" + doc.first_publish_year + "</td></tr>";
 
-    var subjectArray = doc.subject;
-    var subjects = "";
-    for (let i = 0; i < subjectArray.length; i++) {
-        subjects += subjectArray[i];
-        if (i + 1 != subjectArray.length) {
-            subjects += ", ";
-        }
+    var subjects
+
+    if (doc.subject) {
+        var subjectArray = doc.subject;
+        subjects = subjectArray.join(", ");
+    } else {
+        subjects = "No subjects listed.";
     }
+
+    //var subjectArray = doc.subject;
+    //var subjects = subjectArray.join(", ");
+    //for (let i = 0; i < subjectArray.length; i++) {
+    //     subjects += subjectArray[i];
+    //     if (i + 1 != subjectArray.length) {
+    //         subjects += ", ";
+    //     }
+    // }
 
     html += "    <tr><td colspan='2'>";
     html += "<table><tr><td><label>Subjects: </label></td><td>" + subjects + "</td></tr></table>";
