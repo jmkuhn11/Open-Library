@@ -35,20 +35,21 @@
     border:5px solid green;
 }
 
-.submit{
+/*.submit{
     /*display: inline-block;
     /* margin: 10px; */
     /*bottom: 55%;
     right: 50%;
     padding: 5px;
-    /* text-align: center; */
+    /* text-align: center; 
+}*/
 
-}
 .section{
     display:block;
     margin-right: auto;
     margin-left: auto;
     padding: 20rem 5.5rem;
+}
 
 td {
     vertical-align: top;

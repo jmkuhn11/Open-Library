@@ -6,14 +6,13 @@ var pageStartIndex = 0;
 
 next.addEventListener('click', nextPage);
 previous.addEventListener('click', previousPage);
+
 var author;
 var subject;
 
 function getFromUrl() {
-    // Get the search params out of the URL (i.e. `?q=london&format=photo`) and convert it to an array (i.e. ['?q=london', 'format=photo'])
     var searchUrl = document.location.search.split('&');
     console.log(searchUrl);
-    // Get the query and format values
     author = searchUrl[0].split('=').pop();
     subject = searchUrl[1].split('=').pop();
 
