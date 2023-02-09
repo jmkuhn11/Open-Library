@@ -1,0 +1,51 @@
+
+.section{
+    margin:auto;
+}
+::placeholder{
+    color:deeppink;
+    font-size: 12px;
+    text-transform: uppercase;
+    display: flex;
+}
+
+#author-input{
+    display:inline-block;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    right: 50%; 
+    text-align: center;
+    width: 12%;
+    border:5px solid green;
+}
+#subject-input{
+    display:inline-block;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    /* top: 35%; */
+    bottom: 25%;
+    right: 50%;
+    text-align: center;
+    width: 12%;
+    border:5px solid green;
+}
+
+.submit{
+    /*display: inline-block;
+    /* margin: 10px; */
+    /*bottom: 55%;
+    right: 50%;
+    padding: 5px;
+    /* text-align: center; */
+
+}
+.section{
+    display:block;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20rem 5.5rem;
+}
