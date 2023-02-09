@@ -44,7 +44,7 @@
 
     /* text-align: center; */
     section {
-        background-image: url("/assets/images/jefferson-bacquey-habrylo-jefferson-bacquey-hogwarts-library-012.jpg");
+        background-image: url("../images/jefferson-bacquey-habrylo-jefferson-bacquey-hogwarts-library-012.jpg");
         background-repeat: no-repeat;
         background-size: cover;
     }
