@@ -16,10 +16,10 @@
     margin-left: auto;
     margin-right: auto;
     position: absolute;
-    right: 50%; 
+    right: 45%; 
     text-align: center;
     width: 12%;
-    border:5px solid green;
+    border:3px solid gold;
 }
 #subject-input{
     display:inline-block;
@@ -28,11 +28,11 @@
     margin-right: auto;
     position: absolute;
     /* top: 35%; */
-    bottom: 25%;
-    right: 50%;
+    /*bottom: 25%;*/
+    right: 60%;
     text-align: center;
     width: 12%;
-    border:5px solid green;
+    border:3px solid gold;
 }
 
 /*.submit{
@@ -41,14 +41,23 @@
     /*bottom: 55%;
     right: 50%;
     padding: 5px;
-    /* text-align: center; 
-}*/
+
+    /* text-align: center; */
+    section {
+        background-image: url("/assets/images/jefferson-bacquey-habrylo-jefferson-bacquey-hogwarts-library-012.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 
 .section{
     display:block;
     margin-right: auto;
     margin-left: auto;
     padding: 20rem 5.5rem;
+}
+
+.control{
+    z-index:-1;
 }
 
 td {

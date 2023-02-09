@@ -7,12 +7,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <title>Open Library</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/style.css
+
     
-    <div class="navbar-menu">
-      <div class="navbar-start">
+    <div class="navbar-menu column">
+      <div class="navbar-start column is-12">
         <!-- navbar items -->
         <nav class="navbar" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
@@ -81,10 +80,12 @@
       </div>
     </div>
 
+    <link rel="shortcut icon" href="./jefferson-bacquey-habrylo-jefferson-bacquey-hogwarts-library-012.jpg" type="image/x-icon">
 
 </head>
 <body>
-
+<!-- <div class="column">
+  <div class="column is-half">
   <section class="section">
     <h1 class="title">Perfect Book Section</h1>
     <h2 class="subtitle">
@@ -100,9 +101,37 @@
         </form>
       </div>
     </div> 
-  </section>
+  </div>
+  </div>
+  </section> -->
 
 
+  <section class="hero is-info is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+        <div class="column is-6 is-offset-3">
+            <h1 class="title">
+                Perfect Book Selection
+            </h1>
+            <h2 class="subtitle">
+              This is a simple way to find the perfect book you're looking for like the one you're currently reading.
+            </h2>
+            <div class="box">
+                <div class="field is-grouped">
+                    <p class="control is-expanded">
+                      <form id="search-form" class="form w-100">
+                      <input id="author-input"  type="text" placeholder="Author">
+                        <input id="subject-input" type="text" placeholder="Subject">
+                    </p>
+                    
+                      <button class="button is-info btn-block">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
     
     <script src="./assets/js/input.js"></script>
 </body>
