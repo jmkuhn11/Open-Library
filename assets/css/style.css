@@ -2,9 +2,12 @@
     font-family: 'Noto Sans Syloti Nagri', sans-serif;;
 }
 
-#logo{width: auto; height: auto;
+#logo{width: 150px;; height: 150px; opacity: 100%;
 
 }
+
+.nav-color{background-color: #dfd3c3}
+
 
 .section{
     margin:auto;
@@ -25,7 +28,7 @@
     right: 45%; 
     text-align: center;
     width: 12%;
-    border:3px solid gold;
+    border:3px solid rgb(114, 97, 3);
 }
 #subject-input{
     display:inline-block;
@@ -38,7 +41,7 @@
     right: 60%;
     text-align: center;
     width: 12%;
-    border:3px solid gold;
+    border:3px solid rgb(114, 97, 3);
 }
 
 /*.submit{
