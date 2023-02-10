@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Recommendations</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Favorites</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
@@ -28,7 +27,7 @@
             <div id="navbarBasicExample" class="navbar-menu">
               <div class="navbar-start">
                 <a class="navbar-item" href="./index.html">
-                  Home/Search Again
+                  Home
                 </a>
           
                 <a class="navbar-item" href="./favorites.html">
@@ -53,30 +52,13 @@
     </aside>
 
     <main>
-        <h1>Book Recommendations:</h1>
-        <div id="searchCount"></div>
-        <div>
-            <input id="previous" type="button" value="Previous Page"/>
-            <input id="next" type="button" value="Next Page"/>
-        </div>
-        <div id="bookPage"></div>
+        <h1>Favorites:</h1>
+        <div id="favorites"></div>
+        <div id="noFavorites"></div>
 
-        <!--
-        <br><br>
-
-        <div id="bookPage2">
-            <table>
-                <tr><td>COVER</td></tr>
-                <tr><td>TITLE</td></tr>
-                <tr><td>AUTHOR</td></tr>
-                <tr><td>DATE RELEASED</td></tr>
-                <tr><td>DESCRIPTION</td></tr>
-            </table>
-        </div>
-        -->
     </main>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     
-    <script src="./assets/js/books.js"></script>
+    <script src="./assets/js/favorites.js"></script>
 </body>
 </html>

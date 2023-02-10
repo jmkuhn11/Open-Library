@@ -1,5 +1,13 @@
+
 body{
     background-color: #f0ece2;
+
+*{
+    font-family: 'Noto Sans Syloti Nagri', sans-serif;;
+}
+
+#logo{width: auto; height: auto;
+
 }
 
 .section{
@@ -85,6 +93,16 @@ label {
 
 .imgTd {
     vertical-align: middle;
+}
+
+.smallImgTd {
+    vertical-align: middle;
+    text-align-last: center;
+    width: 50px;
+}
+
+.favortiteTd {
+    width: 50%;
 }
 
 .booksTable {
