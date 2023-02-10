@@ -148,7 +148,7 @@ function displayBooks(author, subject, startIndex) {
     html += "    <input type='button' id='saveFavorite-" + count + "' value='Add to Favorites' /></td>";
     html += "    </td></tr>";
     html += "    <tr><td><label>Author: </label><span id='spanAuthor" + count + "'>" + doc.author_name + "</span></td></tr>";
-    html += "    <tr><td><label>Year Released: </label>" + doc.first_publish_year + "</td></tr>";
+    html += "    <tr><td><label>Year Released: </label>" + doc.first_publish_year + "</td></tr>";``
 
     var subjects
 
