@@ -91,6 +91,7 @@ label {
 
 .imgTd {
     vertical-align: middle;
+    width: 200px;
 }
 
 .smallImgTd {
@@ -116,6 +117,10 @@ label {
     width: 100%;
     background-color: whitesmoke;
     
+}
+
+.bookCover {
+    width: 100%;
 }
 
 .buttonTd {
