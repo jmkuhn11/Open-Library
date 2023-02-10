@@ -37,7 +37,7 @@ function createHtmlForBook(coverId, title, url, author, index) {
   html += "<table class='bookTable'>";
   html += "    <tr><td rowspan='0' class='smallImgTd'><img src='" + imgurl + "'></img></td>";
   html += "    <td class='favoriteTd'><label>Title: </label>" + title + "</td>";
-  html += "    <td class='favoriteTd'><label>More Information: </label><a href ='" + url + "'>" + url + "</a></td></tr>";
+  html += "    <td class='favoriteTd'><label>More Information: </label><a href ='" + url + "'>" + title + "</a></td></tr>";
   html += "    <tr><td class='favoriteTd'><label>Author: </label>" + author + "</td>";
   html += "    <td class='favoriteTd'><input type='button' id='favButton-" + index + "' value='Remove From Favorites'></input></td></tr>"
   html += "</table><br>";
