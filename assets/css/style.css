@@ -1,3 +1,7 @@
+
+body{
+    background-color: #f0ece2;
+
 *{
     font-family: 'Noto Sans Syloti Nagri', sans-serif;;
 }
@@ -10,7 +14,7 @@
     margin:auto;
 }
 ::placeholder{
-    color:deeppink;
+    color:#596e79;
     font-size: 12px;
     text-transform: uppercase;
     display: flex;
@@ -22,10 +26,12 @@
     margin-left: auto;
     margin-right: auto;
     position: absolute;
-    right: 45%; 
+    right: 44%; 
     text-align: center;
-    width: 12%;
-    border:3px solid gold;
+    width: 14%;
+    border:3px solid #dfd3c3;
+    height: 15%;
+    border-radius:6px;
 }
 #subject-input{
     display:inline-block;
@@ -37,18 +43,12 @@
     /*bottom: 25%;*/
     right: 60%;
     text-align: center;
-    width: 12%;
-    border:3px solid gold;
+    width: 14%;
+    height: 15%;
+    border:3px solid #dfd3c3;
+    border-radius:6px;
 }
 
-/*.submit{
-    /*display: inline-block;
-    /* margin: 10px; */
-    /*bottom: 55%;
-    right: 50%;
-    padding: 5px;
-
-    /* text-align: center; */
     section {
         background-image: url("../images/jefferson-bacquey-habrylo-jefferson-bacquey-hogwarts-library-012.jpg");
         background-repeat: no-repeat;
@@ -61,9 +61,25 @@
     margin-left: auto;
     padding: 20rem 5.5rem;
 }
+.button.is-info{
+    background-color: #99b27f;
+    width: 112%;
+    right: 50%;
+    height: 92%;
+    bottom: 1%;
+    border-radius:6px;
+}
+
+element.style {
+    background-color: #f0ece2;
+}
+.box{
+background-color:transparent;
+}
 
 .control{
     z-index:-1;
+    
 }
 
 td {
@@ -90,16 +106,18 @@ label {
 }
 
 .booksTable {
-    background-color: white;
+    background-color: #f0ece2;
 }
 
 .bookTable {
-    background-color: aqua;
+    background-color: #f7f7f7;
+    color:black;
     border-radius: 10px; 
-
     border-width: 5px;
     border-style: ridge;
+    border-color:#596e79;
     width: 100%;
+    
 }
 
 .buttonTd {
