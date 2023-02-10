@@ -134,8 +134,8 @@ function displayBooks(author, subject, startIndex) {
 
     moreInfo[count] = "https://openlibrary.org" + doc.key;
 
-    html += "    <td class='buttonTd'><input type='button' value='More Information' onclick='goToMoreInfo(" + count + ")' />&nbsp;&nbsp;";
-    html += "    <input type='button' id='saveFavorite-" + count + "' value='Add to Favorites' /></td>";
+    html += "    <td class='buttonTd'><input class='moreInfoClass' type='button' value='More Information' onclick='goToMoreInfo(" + count + ")' />&nbsp;&nbsp;";
+    html += "    <input type='button' class='saveFavoriteClass' id='saveFavorite-" + count + "' value='Add to Favorites' /></td>";
     html += "    </td></tr>";
     html += "    <tr><td><label>Author: </label><span id='spanAuthor" + count + "'>" + doc.author_name + "</span></td></tr>";
     html += "    <tr><td><label>Year Released: </label>" + doc.first_publish_year + "</td></tr>";
