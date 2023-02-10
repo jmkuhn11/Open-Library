@@ -112,11 +112,11 @@ label {
     color:black;
     border-radius: 10px; 
     border-width: 5px;
-    border-style: ridge;
-    border-color:#596e79;
+    /* border-style: ridge;
+    border-color:#596e79; */
     width: 100%;
     background-color: whitesmoke;
-    
+    border-bottom: 4px solid  #99b27f;
 }
 
 .bookCover {
@@ -126,7 +126,7 @@ label {
 .buttonTd {
     display: flex;
     justify-content: end;
-    flex: 1;
+    flex: 1; 
 }
 
 #searchCount {
@@ -143,15 +143,6 @@ label {
     color: whitesmoke;
 }
 #next{
-    background-color: #99b27f;
-    width: 10%;
-    right: 50%;
-    height: 92%;
-    bottom: 1%;
-    border-radius:6px;
-    color: whitesmoke;
-}
-#input{
     background-color: #99b27f;
     width: 10%;
     right: 50%;
