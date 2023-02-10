@@ -1,17 +1,24 @@
-var form = document.getElementById("search-form");
-var bookPage = document.getElementById('bookPage');
-var next = document.getElementById('next');
-var previous = document.getElementById('previous');
+var form = $("#search-form");
+var bookPage = $("#bookPage");
+var next = $("#next");
+var previous = $("#previous");
 var pageStartIndex = 0;
+var moreInfo = [];
 
-next.addEventListener('click', nextPage);
-previous.addEventListener('click', previousPage);
+var titleArray = JSON.parse(localStorage.getItem("titles")) || [];
+var authorArray = JSON.parse(localStorage.getItem("authors")) || [];
+var infoArray = JSON.parse(localStorage.getItem("urls")) || [];
+var imageIdArray = JSON.parse(localStorage.getItem("images")) || [];
+
+next.on('click', nextPage);
+previous.on('click', previousPage);
 
 var author;
 var subject;
 
 function getFromUrl() {
     var searchUrl = document.location.search.split('&');
+    
     console.log(searchUrl);
     author = searchUrl[0].split('=').pop();
     subject = searchUrl[1].split('=').pop();
@@ -59,29 +66,34 @@ function displayBooks(author, subject, startIndex) {
         document.getElementById("searchCount").textContent = "Search results found: " + searchResults.numFound + "  (Showing " + firstBook + " to " + lastBook + ")";
 
         var html = create10Books(searchResults, startIndex);
+
         console.log(html);
-        bookPage.innerHTML = html;
 
         if (startIndex == 0) {
-            previous.disabled = true;
+            previous.prop('disabled', true);
         } else {
-            previous.disabled = false;
+            previous.prop('disabled', false);
         }
 
         if (startIndex + 10 > searchResults.docs.length) {
-            next.disabled = true;
+            next.prop('disabled', true);
         } else {
-            next.disabled = false;
+            next.prop('disabled', false);
         }
   
-        //console.log(localPage);
-  
-        if (!localPage.results.length) {
+        
+        if (!searchResults.docs.length) {
           console.log('No results found!');
-          resultContentEl.innerHTML = '<h3>No results found, search again!</h3>';
+          bookPage.innerHTML = '<h3>No results found, search again!</h3>';
         } else {
-          resultContentEl.textContent = '';
+            bookPage.html(html);
         }
+
+        for (let i = startIndex; i < startIndex + 10; i++) {
+            $("#saveFavorite-" + i).on('click', saveFavorite);
+        }
+        
+        
       })
       .catch(function (error) {
         console.error(error);
@@ -105,7 +117,7 @@ function displayBooks(author, subject, startIndex) {
 
         if (i < searchResults.docs.length) {
             html += "<tr><td>";
-            html += createHtmlForBook(searchResults.docs[i]);
+            html += createHtmlForBook(searchResults.docs[i], i);
             html += "</td></tr>";
         }
     }
@@ -115,17 +127,27 @@ function displayBooks(author, subject, startIndex) {
   }
 
 
-  function createHtmlForBook(doc) {
-    var imgurl = "https://covers.openlibrary.org/b/ID/" + doc.cover_i + "-M.jpg";
+  function createHtmlForBook(doc, count) {
+
+    var imgurl;
+    if (doc.cover_i) {
+        imgurl = "https://covers.openlibrary.org/b/ID/" + doc.cover_i + "-M.jpg";
+    } else {
+        imgurl = "./assets/images/noImageAvailable.jpg";
+    }
 
     var html = "";
     html += "<table class='bookTable'>";
-    html += "    <tr><td rowspan='0' class='imgTd'><img src='" + imgurl + "'></img></td>";
-    html += "    <td><label>Title: </label>" + doc.title + "</td>";
-    html += "    <td class='buttonTd'><input type='button' value='More Information' />&nbsp;&nbsp;";
-    html += "    <input type='button' value='Add to Favorites' /></td>";
+    html += "    <tr><td rowspan='0' class='imgTd'><img src='" + imgurl + "'></img>";
+    html += "    <input type='hidden' id='imageId" + count + "' value='" + doc.cover_i + "' /></td>";
+    html += "    <td><label>Title: </label><span id='spanTitle" + count + "'>" + doc.title + "</span></td>";
+
+    moreInfo[count] = "https://openlibrary.org" + doc.key;
+
+    html += "    <td class='buttonTd'><input type='button' value='More Information' onclick='goToMoreInfo(" + count + ")' />&nbsp;&nbsp;";
+    html += "    <input type='button' id='saveFavorite-" + count + "' value='Add to Favorites' /></td>";
     html += "    </td></tr>";
-    html += "    <tr><td><label>Author: </label>" + doc.author_name + "</td></tr>";
+    html += "    <tr><td><label>Author: </label><span id='spanAuthor" + count + "'>" + doc.author_name + "</span></td></tr>";
     html += "    <tr><td><label>Year Released: </label>" + doc.first_publish_year + "</td></tr>";
 
     var subjects
@@ -137,15 +159,6 @@ function displayBooks(author, subject, startIndex) {
         subjects = "No subjects listed.";
     }
 
-    //var subjectArray = doc.subject;
-    //var subjects = subjectArray.join(", ");
-    //for (let i = 0; i < subjectArray.length; i++) {
-    //     subjects += subjectArray[i];
-    //     if (i + 1 != subjectArray.length) {
-    //         subjects += ", ";
-    //     }
-    // }
-
     html += "    <tr><td colspan='2'>";
     html += "<table><tr><td><label>Subjects: </label></td><td>" + subjects + "</td></tr></table>";
      
@@ -154,7 +167,36 @@ function displayBooks(author, subject, startIndex) {
 
     return html;
   }
+
+  function goToMoreInfo(count) {
+        window.open(moreInfo[count], '_blank');
+  }
   
+  function saveFavorite() {
+        var index = this.id.split("-")[1];
+
+        var title = $("#spanTitle"+ index).text();
+        var author = $("#spanAuthor"+ index).text();
+        var imageId = $("#imageId"+ index).val();
+
+        var moreInfoUrl = moreInfo[index];
+
+        titleArray.push(title);
+        authorArray.push(author);
+        infoArray.push(moreInfoUrl);
+        imageIdArray.push(imageId);
+
+        localStorage.setItem("titles", JSON.stringify(titleArray));
+        localStorage.setItem("authors", JSON.stringify(authorArray));
+        localStorage.setItem("urls", JSON.stringify(infoArray));
+        localStorage.setItem("images", JSON.stringify(imageIdArray));
+        //this.label = "FAVORITE";
+        //$("#saveFavorite-" + index).val('  Favorite  ');
+        $("#saveFavorite-" + index).prop('disabled', true);
+
+        //alert("saved!");
+  }
+
   /*console.log(authorInputVal & subjectInputVal);
   if (!authorInputVal & !subjectInputVal) {
     console.error('You need to give us an author or a subject!');

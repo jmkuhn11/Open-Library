@@ -73,6 +73,16 @@ label {
     vertical-align: middle;
 }
 
+.smallImgTd {
+    vertical-align: middle;
+    text-align-last: center;
+    width: 50px;
+}
+
+.favortiteTd {
+    width: 50%;
+}
+
 .booksTable {
     background-color: white;
 }

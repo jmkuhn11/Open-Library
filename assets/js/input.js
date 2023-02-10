@@ -1,17 +1,17 @@
-var searchFormEl = document.querySelector('#search-form');
+var searchFormEl = $('#search-form');
 
 function handleSearchFormSubmit(event) {
   event.preventDefault();
 
-  var authorInputVal = document.querySelector('#author-input').value;
-  var subjectInputVal = document.querySelector('#subject-input').value;
+  var authorInputVal = $('#author-input').val();
+  var subjectInputVal = $('#subject-input').val();
  
   var searchPage = './search.html?author=' + authorInputVal + '&subject=' + subjectInputVal;
 
   location.assign(searchPage);
 }
 
-searchFormEl.addEventListener('submit', handleSearchFormSubmit);
+searchFormEl.on('submit', handleSearchFormSubmit);
 
 //https://openlibrary.org/search/authors.json?q=suzanne-collins
 //https://openlibrary.org/authors/OL1394359A/works.json
