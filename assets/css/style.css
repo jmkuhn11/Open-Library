@@ -32,10 +32,6 @@ body{
     position: absolute;
     right: 44%; 
     text-align: center;
-
-    width: 12%;
-    border:3px solid rgb(114, 97, 3);
-
     width: 14%;
     border:3px solid #dfd3c3;
     height: 15%;
@@ -48,14 +44,9 @@ body{
     margin-left: auto;
     margin-right: auto;
     position: absolute;
-    /* top: 35%; */
-    /*bottom: 25%;*/
+
     right: 60%;
     text-align: center;
-
-    width: 12%;
-    border:3px solid rgb(114, 97, 3);
-
     width: 14%;
     height: 15%;
     border:3px solid #dfd3c3;
