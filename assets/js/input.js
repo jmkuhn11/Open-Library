@@ -12,7 +12,3 @@ function handleSearchFormSubmit(event) {
 }
 
 searchFormEl.on('submit', handleSearchFormSubmit);
-
-//https://openlibrary.org/search/authors.json?q=suzanne-collins
-//https://openlibrary.org/authors/OL1394359A/works.json
-//https://openlibrary.org/subjects/love.json

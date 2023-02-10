@@ -93,6 +93,7 @@ label {
 
 .imgTd {
     vertical-align: middle;
+    width: 200px;
 }
 
 .smallImgTd {
@@ -118,6 +119,10 @@ label {
     border-color:#596e79;
     width: 100%;
     
+}
+
+.bookCover {
+    width: 100%;
 }
 
 .buttonTd {

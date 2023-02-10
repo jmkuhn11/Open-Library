@@ -19,18 +19,13 @@ var subject;
 function getFromUrl() {
     var searchUrl = document.location.search.split('&');
     
-    console.log(searchUrl);
     author = searchUrl[0].split('=').pop();
     subject = searchUrl[1].split('=').pop();
-
-    console.log(author);
-    console.log(subject);
   
     displayBooks(author, subject, pageStartIndex);
   }
   
 function displayBooks(author, subject, startIndex) {
-    console.log(startIndex);
     var finalUrl = 'https://openlibrary.org/search.json?';
   
     var endUrl;
@@ -56,7 +51,6 @@ function displayBooks(author, subject, startIndex) {
         return response.json();
       })
       .then(function (searchResults) {
-        console.log(searchResults);
         var firstBook = startIndex + 1;
         var lastBook = startIndex + 10;
         if (lastBook > searchResults.numFound) {
@@ -66,8 +60,6 @@ function displayBooks(author, subject, startIndex) {
         document.getElementById("searchCount").textContent = "Search results found: " + searchResults.numFound + "  (Showing " + firstBook + " to " + lastBook + ")";
 
         var html = create10Books(searchResults, startIndex);
-
-        console.log(html);
 
         if (startIndex == 0) {
             previous.prop('disabled', true);
@@ -83,7 +75,6 @@ function displayBooks(author, subject, startIndex) {
   
         
         if (!searchResults.docs.length) {
-          console.log('No results found!');
           bookPage.innerHTML = '<h3>No results found, search again!</h3>';
         } else {
             bookPage.html(html);
@@ -112,7 +103,6 @@ function displayBooks(author, subject, startIndex) {
 
   function create10Books(searchResults, start) {
     var html = "<table class='booksTable'>";
-    console.log(start);
     for (let i = start; i < start + 10; i++) {
 
         if (i < searchResults.docs.length) {
@@ -138,7 +128,7 @@ function displayBooks(author, subject, startIndex) {
 
     var html = "";
     html += "<table class='bookTable'>";
-    html += "    <tr><td rowspan='0' class='imgTd'><img src='" + imgurl + "'></img>";
+    html += "    <tr><td rowspan='0' class='imgTd'><img class='bookCover' src='" + imgurl + "'></img>";
     html += "    <input type='hidden' id='imageId" + count + "' value='" + doc.cover_i + "' /></td>";
     html += "    <td><label>Title: </label><span id='spanTitle" + count + "'>" + doc.title + "</span></td>";
 
@@ -190,34 +180,7 @@ function displayBooks(author, subject, startIndex) {
         localStorage.setItem("authors", JSON.stringify(authorArray));
         localStorage.setItem("urls", JSON.stringify(infoArray));
         localStorage.setItem("images", JSON.stringify(imageIdArray));
-        //this.label = "FAVORITE";
-        //$("#saveFavorite-" + index).val('  Favorite  ');
         $("#saveFavorite-" + index).prop('disabled', true);
-
-        //alert("saved!");
   }
-
-  /*console.log(authorInputVal & subjectInputVal);
-  if (!authorInputVal & !subjectInputVal) {
-    console.error('You need to give us an author or a subject!');
-    return;
-  }
-
-  var QueryString = 'https://openlibrary.org/search.json?author=' + authorInputVal + '&subject=' + subjectInputVal;
-
-  location.assign(QueryString);
-
-
-  console.log(authorInputVal & subjectInputVal);
-  if (authorInputVal & subjectInputVal) {
-    var QueryString = 'https://openlibrary.org/search.json?author=' + authorInputVal + '&subject=' + subjectInputVal;
-  } else if (!subjectInputVal) {
-    var QueryString = 'https://openlibrary.org/search.json?author=' + authorInputVal;
-  } else if (!authorInputVal) {
-    var QueryString = 'https://openlibrary.org/search.json?subject=' + subjectInputVal;
-  } else {
-    console.error('You need to give us an author or a subject!');
-    return;
-  }*/
 
   getFromUrl()
