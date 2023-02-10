@@ -1,7 +1,8 @@
 
 body{
-    background-color: #f0ece2;
+    background-color: #d9dad7;
 }
+
 *{
     font-family: 'Noto Sans Syloti Nagri', sans-serif;;
 }
@@ -70,9 +71,6 @@ body{
     border-radius:6px;
 }
 
-element.style {
-    background-color: #f0ece2;
-}
 .box{
 background-color:transparent;
 }
@@ -111,13 +109,13 @@ label {
 }
 
 .bookTable {
-    background-color: #f7f7f7;
     color:black;
     border-radius: 10px; 
     border-width: 5px;
     border-style: ridge;
     border-color:#596e79;
     width: 100%;
+    background-color: whitesmoke;
     
 }
 
@@ -134,4 +132,31 @@ label {
 #searchCount {
     font-size: 20px;
     font-weight: bold;
+}
+#previous{
+    background-color: #99b27f;
+    width: 10%;
+    right: 50%;
+    height: 92%;
+    bottom: 1%;
+    border-radius:6px; 
+    color: whitesmoke;
+}
+#next{
+    background-color: #99b27f;
+    width: 10%;
+    right: 50%;
+    height: 92%;
+    bottom: 1%;
+    border-radius:6px;
+    color: whitesmoke;
+}
+#input{
+    background-color: #99b27f;
+    width: 10%;
+    right: 50%;
+    height: 92%;
+    bottom: 1%;
+    border-radius:6px;
+    color: whitesmoke;
 }
