@@ -1,22 +1,30 @@
 
 body{
     background-color: #d9dad7;
+    font-family: 'Montserrat', sans-serif;
 }
 
-*{
-    font-family: 'Noto Sans Syloti Nagri', sans-serif;;
+
+#logo{
+    width: 130px;
+    height: 110px;
 }
 
-#logo{width: 150px;; height: 150px; opacity: 100%;
+#navHeadStyle{
+    margin-left: end;
+}
+.nav-color{
+    padding: 0;
+    background-color: whitesmoke;
 
 }
-
-.nav-color{background-color: #dfd3c3}
-
-
+.title{
+    margin-bottom: 26px;
+}
 .section{
     margin:auto;
 }
+
 ::placeholder{
     color:#596e79;
     font-size: 12px;
@@ -30,7 +38,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     position: absolute;
-    right: 44%; 
+    left: 28%; 
     text-align: center;
     width: 14%;
     border:3px solid #dfd3c3;
@@ -45,7 +53,7 @@ body{
     margin-right: auto;
     position: absolute;
 
-    right: 60%;
+    right: 42%;
     text-align: center;
     width: 14%;
     height: 15%;
@@ -53,12 +61,11 @@ body{
     border-radius:6px;
 
 }
-
-    section {
-        background-image: url("../images/jefferson-bacquey-habrylo-jefferson-bacquey-hogwarts-library-012.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+section {
+background-image: url("../images/jefferson-bacquey-habrylo-jefferson-bacquey-hogwarts-library-012.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+}
 
 .section{
     display:block;
@@ -69,16 +76,20 @@ body{
 .button.is-info{
     background-color: #99b27f;
     width: 112%;
-    right: 50%;
+    right: 30%;
     height: 92%;
-    bottom: 1%;
+    top: 8%;
     border-radius:6px;
 }
 
 .box{
 background-color:transparent;
 }
-
+#directiontag{
+    font-size: 17px;
+    color:white;
+    margin: 22px;
+}
 .control{
     z-index:-1;
     
@@ -87,6 +98,7 @@ background-color:transparent;
 td {
     vertical-align: top;
     padding: 5px;
+
 }
 
 label {
@@ -109,18 +121,18 @@ label {
 }
 
 .booksTable {
-    background-color: #f0ece2;
+    background-color: #d9dad7;
 }
 
 .bookTable {
     color:black;
     border-radius: 10px; 
     border-width: 5px;
-    /* border-style: ridge;
-    border-color:#596e79; */
     width: 100%;
     background-color: whitesmoke;
     border-bottom: 4px solid  #99b27f;
+    margin-bottom: 4px;
+    
 }
 
 .bookCover {
@@ -133,9 +145,16 @@ label {
     flex: 1; 
 }
 
+#searchtitle{
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: 10px;
+}
 #searchCount {
     font-size: 20px;
     font-weight: bold;
+    text-align: right;
+    margin-right: 2%;
 }
 #previous{
     background-color: #99b27f;
@@ -145,6 +164,8 @@ label {
     bottom: 1%;
     border-radius:6px; 
     color: whitesmoke;
+    cursor: pointer;
+    margin-left: 10px;
 }
 #next{
     background-color: #99b27f;
@@ -154,4 +175,5 @@ label {
     bottom: 1%;
     border-radius:6px;
     color: whitesmoke;
+    cursor: pointer;
 }
