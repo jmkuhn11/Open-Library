@@ -8,10 +8,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <title>Open Library</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Syloti+Nagri&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" >
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+      }
+    </style>
   <link rel="stylesheet" href="./assets/css/style.css">
 
   <link rel="shortcut icon" href="./jefferson-bacquey-habrylo-jefferson-bacquey-hogwarts-library-012.jpg"
@@ -38,6 +42,7 @@
 
         <div id="navbarBasicExample" class="navbar-menu nav-color">
           <div class="navbar-start">
+            <h1 id="navHeadStyle">Open Library Selector</h1>
             <a class="navbar-item" href="./index.html">
               Home
             </a>
@@ -47,11 +52,9 @@
           </div>
           <div class="navbar-end">
             <hr class="navbar-divider">
+            <h1 id="navHeadStyle">Open Library Selector</h1>
           </div>
         </div>
-    </div>
-
-    <div class="navbar-end">
     </div>
   </div>
   </div>
@@ -66,23 +69,21 @@
     <link rel="shortcut icon" href="./jefferson-bacquey-habrylo-jefferson-bacquey-hogwarts-library-012.jpg" type="image/x-icon">
 
 </head>
-<body id="body-Style">
+<body>
 
-
-
-
-
-  <!-- body section  -->
   <section class="hero is-info is-fullheight">
     <div class="hero-body">
       <div class="container has-text-centered">
         <div class="column is-6 is-offset-3">
 
             <h1 class="title">
-                Perfect Book Selection
+                Welcome! 
             </h1>
-            <h2 class="subtitle">
-              This is a simple way to find the perfect book you're looking for when you're wanting something new. Search for either an author or subject or both.
+            <h2 class="subtitle sub">
+              This is a simple way to find the perfect book when you don't know where to start. Search for books written by your favorite author or read about subjects you love. 
+              
+              <p id="directiontag"> Enter a value for one or both above!</p>
+              
             </h2>
             <div class="box">
                 <div class="field is-grouped">
@@ -92,9 +93,9 @@
                         <input id="subject-input" type="text" placeholder="Subject">
                     </p>
                     
-                      <button class="button is-info btn-block">Submit</button>
+                      <button class="button is-info btn-block is-success">Submit</button>
                     </form>
-                </div>
+                  </div>
 
             </div>
           </div>
