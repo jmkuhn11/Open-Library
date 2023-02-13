@@ -2,7 +2,7 @@
 
 ## Description
 
-As new students inBottcamp, we have less time on our hands to search and enjoy new books. We were looking for an easy way to gain recommendations based off of past authors and subjects we liked. Thus, we created a service that will look through a database for us and give us good book options based off of our interests. Creating this service reuired an in depth understanding of the workings of server side API's and javascript as a whole. Completing this project helped us work on those qualities. We also cemented using multiple html, css, and js files for one project, and implementing code between all of the files. All of the group members now have a better idea on how to format, style, and run a more complex website that is meant to be appealing for other clients to use.
+As new students in Boot Camp, we have less time on our hands to search and enjoy new books. We were looking for an easy way to gain recommendations based off of past authors and subjects we liked. Thus, we created a service that will look through a database for us and give us good book options based off of our interests. Creating this service reuired an in depth understanding of the workings of server side API's and javascript as a whole. Completing this project helped us work on those qualities. We also cemented using multiple html, css, and js files for one project, and implementing code between all of the files. All of the group members now have a better idea on how to format, style, and run a more complex website that is meant to be appealing for other clients to use.
 
 ## Installation
 
