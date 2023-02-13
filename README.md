@@ -7,7 +7,9 @@ As new students inBottcamp, we have less time on our hands to search and enjoy n
 ## Installation
 
 Bulma for CSS
+
 jQuery for js
+
 Fetch Open-Library API
 
 ## Usage
