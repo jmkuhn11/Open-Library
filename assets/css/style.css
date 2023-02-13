@@ -51,6 +51,7 @@ body{
     border-radius:6px;
 
 }
+
 #subject-input{
     display:inline-block;
     padding: 5px;
@@ -66,6 +67,7 @@ body{
     border-radius:6px;
 
 }
+
 section {
 background-image: url("../images/jefferson-bacquey-habrylo-jefferson-bacquey-hogwarts-library-012.jpg");
 background-repeat: no-repeat;
@@ -78,6 +80,7 @@ background-size: cover;
     margin-left: auto;
     padding: 20rem 5.5rem;
 }
+
 .button.is-info{
     background-color: #99b27f;
     width: 112%;
@@ -90,6 +93,7 @@ background-size: cover;
 .box{
 background-color:transparent;
 }
+
 #directiontag{
     font-size: 17px;
     color:white;
@@ -121,20 +125,6 @@ label {
     width: 50px;
 }
 
-.loader {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
-    border-radius: 50%;
-    left: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
 .favortiteTd {
     width: 50%;
 }
